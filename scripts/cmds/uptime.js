@@ -100,7 +100,7 @@ BOT has been working for ${uptimeMessage}
 
 module.exports = {
 	config: {
-		name: 'uptime',
+		name: 'uptime2',
 		version: '2.2.0',
 		author: "Xrotick", // Do not change credits
 		countDown: 5,

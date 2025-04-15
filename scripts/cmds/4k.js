@@ -4,19 +4,19 @@ module.exports = {
   config: {
     name: "4k",
     aliases: ["upscale"],
-    version: "3.0",
+    version: "1.1",
     role: 0,
     author: "Team_Calyx | Fahim_Noob",
     countDown: 5,
     longDescription: "Upscale images to 4K resolution.",
-    category: "tools",
+    category: "image",
     guide: {
       en: "${pn} reply to an image to upscale it to 4K resolution."
     }
   },
   onStart: async function ({ message, event }) {
     if (!event.messageReply || !event.messageReply.attachments || !event.messageReply.attachments[0]) {
-      return message.reply("❌| Image deli na je ??");
+      return message.reply("Please reply to an image to upscale it.");
     }
     const imgurl = encodeURIComponent(event.messageReply.attachments[0].url);
     const noobs = 'onrender.com';
@@ -28,7 +28,7 @@ module.exports = {
         const attachment = await global.utils.getStreamFromURL(image, "upscaled-image.png");
 
         message.reply({
-          body: "✅| Here is your 4K image:",
+          body: "✅| Here is your 4K upscaled image:",
           attachment: attachment
         });
         let processingMsgID = info.messageID;
